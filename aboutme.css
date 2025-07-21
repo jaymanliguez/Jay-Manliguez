@@ -1,104 +1,232 @@
-body {
-  font-family: 'Arial', sans-serif;
+/* General Reset */
+* {
   margin: 0;
-  background: #fff;
-  color: #000;
-}
-
-.container {
-  display: flex;
-  max-width: 1000px;
-  margin: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.sidebar {
-  background-color: #f8f1ea;
-  width: 35%;
-  padding: 30px;
+  padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-.profile-img {
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header */
+header {
+  position: fixed;
   width: 100%;
-  border-radius: 50%;
+  background-color: #1f1f1f;
+  padding: 1rem 2rem;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  padding: 100px 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Different section background colors */
+.home-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url("image.jpg") center 45%/cover no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 80px; /* to prevent nav overlap */
+}
+
+.home-overlay {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 50px;
+}
+
+.home-section h1 {
+  font-size: 5rem;
   margin-bottom: 20px;
 }
 
-.contact p {
-  margin: 10px 0;
-  font-size: 14px;
-}
-
-.section {
-  margin-top: 30px;
-}
-
-.section1 {
-  margin-top: 30px;
-}
-
-.section1 h3 {
-  border-bottom: 1px solid #aaa;
-  color: rgb(145, 8, 8);  
-  padding-bottom: 5px;
-  font-size: 16px;
+.home-section .intro {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 
-.section h3 {
-  border-bottom: 1px solid #aaa;
-  color: rgb(145, 8, 8); 
-  padding-bottom: 5px;
-  font-size: 16px;
+.about-section {
+  background-color: #EBA0CB;
 }
 
-.section ul {
-  padding-left: 20px;
-  font-size: 14px;
+.skills-section {
+  background-color: #F9CED8;
 }
 
-.section1 ul {
-  padding-left: 20px;
-  font-size: 14px;
+.hobbies-section {
+  background-color: #EBE9F2;
 }
 
-.section1 ul li{
-    padding-bottom: 10px;
+.blog-section {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("image2.jpg") center 55%/cover no-repeat;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  text-align: center;
 }
 
-.main {
-  padding: 30px;
-  width: 65%;
-  box-sizing: border-box;
+.blog-overlay {
+  padding: 40px 20px;
 }
 
-.main h1 {
-  font-size: 32px;
-  color:rgb(145, 8, 8);
-  margin: 0;
-  margin-top: 5%;
+.blog-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #dc5ad9;
 }
 
-.main h2 {
-  font-size: 16px;
-  color: #555;
-  margin-top: 5px;
-  font-weight: normal;
+.blog-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.main .section {
-  margin-top: 30px;
+.contact-section {
+  background-color: #BEB3D2;
+  padding: 100px 20px;
+  text-align: center;
 }
 
-.main .section h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #000;
-  padding-bottom: 5px;
+.contact-section h2 {
+  color: #043933;
+  margin-bottom: 20px;
 }
 
-.main ul {
-  padding-left: 20px;
-  font-size: 14px;
+.contact-section p{
+    padding: 10px;
+}
+
+.social-links {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-icon img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+  transform: scale(1.2);
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #00bcd4;
+}
+
+.hobbies-section h2 {
+  color: #ba41d5;
+  margin-bottom: 20px;
+}
+
+.skills-section h2 {
+  color: #7182fe;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0a6ad0;
+}
+
+/* Skills List */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+.skills-list li {
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Intro Text */
+.intro {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  background: #1f1f1f;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
 }
